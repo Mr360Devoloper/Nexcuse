@@ -1,8 +1,8 @@
 // --- CONFIGURATION ---
 const API_KEY = 'bc55823136b52865e3f7c8c7a0be827955da3db7'; 
 const FOLDERS = {
-    classwork: 'PASTE_YOUR_CLASSWORK_FOLDER_ID_HERE',
-    homework: 'PASTE_YOUR_HOMEWORK_FOLDER_ID_HERE'
+    classwork: 'https://drive.google.com/drive/u/5/folders/1soxcjhKkO9TxfUCXimv81tfkQ8n4bfFL',
+    homework: 'https://drive.google.com/drive/u/5/folders/1VxatVzwaGrEN4ZC74TYlgOHhNKVTZQpM'
 };
 
 // --- THE FETCH ENGINE ---
