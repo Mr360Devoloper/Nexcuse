@@ -1,0 +1,45 @@
+:root {
+    --bg: #0f172a;        /* Deep Navy/Slate */
+    --card: #1e293b;      /* Lighter Slate */
+    --accent: #38bdf8;    /* Professional Cyan */
+    --text: #f1f5f9;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.auth-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(15px); /* Glass effect */
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.main-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    color: var(--bg);
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.main-btn:hover {
+    box-shadow: 0 0 15px var(--accent);
+    transform: translateY(-2px);
+}
