@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexcuse | Dashboard</title>
     <link rel="stylesheet" href="css/dashboard-style.css">
-    <!-- Boxicons for the professional look -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
 
-    <!-- Sidebar -->
     <aside class="sidebar">
         <div class="logo-section">
             <i class='bx bxl-visual-studio'></i>
@@ -25,7 +23,6 @@
             <li><a href="#"><i class='bx bx-note'></i> Notes</a></li>
         </ul>
 
-        <!-- Admin Only Toggle -->
         <div id="admin-controls" class="admin-zone" style="display: none;">
             <p class="label">ADMIN PANEL</p>
             <button class="upload-btn"><i class='bx bx-cloud-upload'></i> Upload New</button>
@@ -36,26 +33,46 @@
         </div>
     </aside>
 
-    <!-- Main Content -->
     <main class="content">
         <header class="header">
             <h1 id="welcome-msg">Welcome, Student</h1>
             <div id="admin-pill" class="pill" style="display: none;">Admin Access</div>
+            <button onclick="fetchNexcuseData()" class="refresh-btn"><i class='bx bx-refresh'></i></button>
         </header>
 
         <div class="dashboard-grid">
-            <!-- These cards will eventually be populated by your Drive API -->
-            <div class="card">
-                <h3>Latest Homework</h3>
-                <div class="preview-box">Empty - No Uploads</div>
+            
+            <div class="card homework-section">
+                <div class="card-header">
+                    <h3><i class='bx bx-notification'></i> Pending Homework</h3>
+                    <span class="effort-badge">Effort Required</span>
+                </div>
+                <div id="hw-list" class="reminders-container">
+                    <p class="status-msg">Fetching reminders...</p>
+                </div>
             </div>
-            <div class="card">
+
+            <div class="card classwork-section">
+                <div class="card-header">
+                    <h3><i class='bx bx-book-content'></i> Classwork Library</h3>
+                </div>
+                <div id="cw-grid" class="asset-grid">
+                    <p class="status-msg">Loading files...</p>
+                </div>
+            </div>
+
+            <div class="card mini-card">
                 <h3>NovaAI Status</h3>
-                <p>System: Online</p>
+                <div class="status-indicator">
+                    <span class="dot"></span>
+                    <p>Nova System: Online</p>
+                </div>
             </div>
+            
         </div>
     </main>
 
     <script src="js/dashboard-logic.js"></script>
+    <script src="js/drive-logic.js"></script>
 </body>
 </html>
