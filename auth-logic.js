@@ -1,4 +1,4 @@
-const adminEmail = "your-email@example.com"; // Replace with your actual email
+const adminEmail = "pratyush.24651@kvsrodelhi.in"; // Replace with your actual email
 
 // Signup Logic
 function handleSignup(email, password) {
