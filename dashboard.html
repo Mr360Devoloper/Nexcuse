@@ -3,35 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexcuse | Auth</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Nexcuse | Dashboard</title>
+    <link rel="stylesheet" href="css/dashboard-style.css">
+    <!-- Boxicons for the professional look -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="auth-wrapper">
-        <div class="auth-card">
-            <div class="brand">
-                <div class="nova-core"></div>
-                <h1>Nexcuse</h1>
-            </div>
-            
-            <h2 id="auth-title">Login</h2>
-            
-            <form id="auth-form">
-                <input type="email" id="email" placeholder="School Email" required>
-                <input type="password" id="password" placeholder="Password" required>
-                <button type="submit" id="submit-btn" class="main-btn">Enter Workspace</button>
-            </form>
 
-            <p class="toggle-text">
-                Need access? <span id="toggle-link">Create Account</span>
-            </p>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="logo-section">
+            <i class='bx bxl-visual-studio'></i>
+            <span class="logo-name">Nexcuse</span>
         </div>
-    </div>
+        
+        <ul class="nav-links">
+            <li><a href="#" class="active"><i class='bx bx-home-alt'></i> Home</a></li>
+            <li><a href="#"><i class='bx bx-folder'></i> Homework</a></li>
+            <li><a href="#"><i class='bx bx-book'></i> Classwork</a></li>
+            <li><a href="#"><i class='bx bx-bot'></i> NovaAI</a></li>
+            <li><a href="#"><i class='bx bx-note'></i> Notes</a></li>
+        </ul>
 
-    <!-- Firebase SDKs -->
-    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-auth-compat.js"></script>
-    <script src="js/firebase-config.js"></script>
-    <script src="js/auth-logic.js"></script>
+        <!-- Admin Only Toggle -->
+        <div id="admin-controls" class="admin-zone" style="display: none;">
+            <p class="label">ADMIN PANEL</p>
+            <button class="upload-btn"><i class='bx bx-cloud-upload'></i> Upload New</button>
+        </div>
+
+        <div class="user-footer">
+            <button id="logout-btn"><i class='bx bx-log-out'></i> Sign Out</button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="content">
+        <header class="header">
+            <h1 id="welcome-msg">Welcome, Student</h1>
+            <div id="admin-pill" class="pill" style="display: none;">Admin Access</div>
+        </header>
+
+        <div class="dashboard-grid">
+            <!-- These cards will eventually be populated by your Drive API -->
+            <div class="card">
+                <h3>Latest Homework</h3>
+                <div class="preview-box">Empty - No Uploads</div>
+            </div>
+            <div class="card">
+                <h3>NovaAI Status</h3>
+                <p>System: Online</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/dashboard-logic.js"></script>
 </body>
 </html>
